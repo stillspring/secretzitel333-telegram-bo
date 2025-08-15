@@ -1,31 +1,9 @@
-version: '3.8'
-
 services:
-  telegram-bot:
+  secretzitel333-telegram-bot:
     build: .
-    container_name: telegram-bot
-    restart: unless-stopped
-    environment:
-      # Required environment variables
-      - BOT_TOKEN=${BOT_TOKEN}
-      - OWNER_ID=${OWNER_ID}
-      
-      # Optional environment variables with defaults
-      - KEY_PHRASE=${KEY_PHRASE:-secret}
-      - KEY_RESPONSE=${KEY_RESPONSE:-You found the secret! 🎉}
-      - OTHER_RESPONSES=${OTHER_RESPONSES:-["Hello there! 👋", "Thanks for your message!", "How can I help you today?", "Nice to hear from you!", "I'm here if you need anything!"]}
-      - CASE_SENSITIVE=${CASE_SENSITIVE:-false}
-      - LOG_LEVEL=${LOG_LEVEL:-INFO}
-    
-    # Health check
-    healthcheck:
-      test: ["CMD", "python", "-c", "import requests; requests.get('https://api.telegram.org/bot${BOT_TOKEN}/getMe')"]
-      interval: 30s
-      timeout: 10s
-      retries: 3
-      start_period: 40s
-    
-    # Resource limits
+    container_name: secretzitel333-telegram-bot
+    restart: always
+
     deploy:
       resources:
         limits:
@@ -34,8 +12,7 @@ services:
         reservations:
           memory: 64M
           cpus: '0.25'
-    
-    # Logging configuration
+
     logging:
       driver: "json-file"
       options:
