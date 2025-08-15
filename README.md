@@ -1,6 +1,6 @@
 # Telegram Bot with Key Phrase Detection
 
-A Python Telegram bot that responds to specific key phrases and sends owner notifications using python-telegram-bot 21.2.
+A Python Telegram bot that responds to specific key phrases and sends owner notifications using pyTelegramBotAPI.
 
 ## Features
 
@@ -35,4 +35,4 @@ A Python Telegram bot that responds to specific key phrases and sends owner noti
 
 In the Replit Shell, run:
 ```bash
-pip install python-telegram-bot==21.2 python-dotenv
+pip install pyTelegramBotAPI python-dotenv

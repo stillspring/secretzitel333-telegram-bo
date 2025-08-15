@@ -1,6 +1,6 @@
 # Overview
 
-This is a Python Telegram bot application built with python-telegram-bot 21.2 that provides intelligent message processing and owner notifications. The bot detects specific key phrases in user messages and responds with predefined messages while simultaneously notifying the bot owner. It also provides random responses to regular user interactions and includes comprehensive logging and error handling.
+This is a Python Telegram bot application built with pyTelegramBotAPI that provides intelligent message processing and owner notifications. The bot detects specific key phrases in user messages and responds with predefined messages while simultaneously notifying the bot owner. It also provides random responses to regular user interactions and includes comprehensive logging and error handling.
 
 # User Preferences
 
@@ -23,10 +23,10 @@ The system uses environment variables for configuration with a dedicated Config 
 - Centralized configuration access across modules
 
 ## Message Processing Architecture
-The bot implements a handler-based architecture using python-telegram-bot's built-in patterns:
+The bot implements a handler-based architecture using pyTelegramBotAPI's decorator patterns:
 - Command handlers for /start and /help commands
 - Message handlers for text processing and key phrase detection
-- Asynchronous processing for all bot interactions
+- Synchronous processing with automatic message polling
 
 ## Logging and Error Handling
 Comprehensive logging system with:
@@ -45,7 +45,7 @@ Flexible behavior configuration supporting:
 # External Dependencies
 
 ## Core Framework
-- **python-telegram-bot 21.2**: Primary framework for Telegram Bot API integration
+- **pyTelegramBotAPI**: Primary framework for Telegram Bot API integration
 - **python-dotenv**: Environment variable management from .env files
 
 ## Runtime Environment
