@@ -33,10 +33,11 @@ class Config:
                 logger.error(f"Invalid OWNER_ID format: {owner_id_str}")
 
         # Key phrase configuration
-        self.KEY_PHRASE: str = os.getenv('KEY_PHRASE', 'secret')
+        self.KEY_PHRASE: str = os.getenv('KEY_PHRASE', 'QR код')
         self.KEY_RESPONSE: str = os.getenv(
             'KEY_RESPONSE',
-            'This is the prepared response for the key phrase!')
+            'Это то, о чём я говорил! Ура! Ты прошел мой МЕГА квест! Поздравляю! Теперь ты можешь получить свой приз!'
+        )
 
         # Other responses configuration
         other_responses_str = os.getenv('OTHER_RESPONSES', '')
@@ -62,7 +63,10 @@ class Config:
         """Parse OTHER_RESPONSES from environment variable."""
         if not responses_str:
             # Default responses if none provided
-            return ["Привет?", "Нет!", "Ты лох", "ха-ха-ха", "Ты опять лох!"]
+            return [
+                "Ты точно попал туда, куда надо?", "Что?", "Подумай ещё.",
+                "Не правильно!", "Ты не угадал!"
+            ]
 
         try:
             # Try to parse as JSON array first
